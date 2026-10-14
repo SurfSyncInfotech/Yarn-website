@@ -1,0 +1,125 @@
+.counter-content-area {
+    margin-left: 50px;
+
+    @include breakpoint (max-xxl){
+        margin-left: 0;
+    }
+
+    .section-title {
+        @include breakpoint (max-xxl){
+            width: initial;        
+        }
+    }
+    
+    .counter-text {
+        margin-top: 20px;
+        color: #515459;
+        text-transform: capitalize;
+        max-width: 755px;
+    }
+
+    .counter-items {
+        margin-top: 27px;
+       max-width: 365px;
+
+        p {
+            text-transform: capitalize;
+            color: #515459;
+            max-width: 350px;
+        }
+
+        .counter-box {
+            border-bottom: 1px solid $border-color;
+            margin-bottom: 10px;
+            padding-bottom: 15px;
+            @include transition;
+
+            h3 {
+                font-size: 48px;
+                font-weight: 700;
+                line-height: 1;
+            }
+
+            p {
+                font-weight: 500;
+                color: $header-color;
+                text-transform: capitalize;
+                margin-top: 8px;
+                font-size: 16px;
+            }
+        }
+
+        &:hover {
+            .counter-box {
+                border-bottom: 1px solid $theme-color;
+            }
+        }
+
+        &.counter-two {
+            p {
+                max-width: 280px;
+            }
+            &:hover {
+                .counter-box {
+                    border-bottom: 1px solid $theme-color;
+                }
+            }
+        }
+
+        
+    }
+}
+
+.counter-image {
+    border-radius: 30px;
+    height: 755px;
+
+    @include breakpoint (max-lg){
+        height: 570px;
+    }
+
+    @include breakpoint (max-md){
+        height: 530px;
+    }
+
+    @include breakpoint (max-sm){
+        height: 480px;
+    }
+
+    img {
+        @include imgw;
+        object-fit: cover;
+        border-radius: 30px;
+        object-fit: cover;
+    }
+}
+
+.counter-two {
+    margin-top: -35px;
+}
+
+.counter-section1 {
+    .container-fluid {
+        padding: 0 60px;
+
+         @include breakpoint (max-xl4){
+            padding: 0 40px;
+        }
+
+         @include breakpoint (max-xxxl){
+            padding: 0 30px;
+        }
+
+         @include breakpoint (max-xxl){
+            padding: 0 25px;
+        }
+
+        @include breakpoint (max-xl){
+            padding: 0 20px;
+        }
+
+         @include breakpoint (max-xxs){
+            padding: 0 16px;
+        }
+    }
+}

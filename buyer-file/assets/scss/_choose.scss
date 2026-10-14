@@ -1,0 +1,438 @@
+.choose-image-items {
+    .choose-image {
+        margin-top: 71px;
+        position: relative;
+
+        img {
+            @include imgw;
+            object-fit: cover;
+        }
+
+        @include breakpoint (max-lg){
+            margin-top: 40px;      
+        }
+        
+        .text {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            max-width: 270px;
+
+            @include breakpoint (max-xxl){
+                gap: 20px;
+                right: 20px;
+                top: 20px;
+            }
+
+            span {
+                font-size: 20px;
+                font-weight: 600;
+                line-height: 30px;
+                font-family: $heading-font;
+                color: $header-color;
+            }
+        }
+
+        .counter-box {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+
+            @include breakpoint (max-xl){
+                right: 20px;     
+            }
+
+            @include breakpoint (max-md){
+                right: 40px;     
+            }
+
+            h1 {
+                font-size: 36px;
+                line-height: 46px;
+            }
+
+            p {
+                font-weight: 400;
+            }
+        }
+    }
+}
+
+.choose-content {
+    p {
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        br {
+            @include breakpoint (max-xxl){
+                display: none;
+            }
+        }
+    }
+
+    .choose-perform-area {
+        @include flex;
+        gap: 30px;
+
+        @include breakpoint (max-lg){
+            flex-wrap: wrap;      
+        }
+
+        .progress-wrapper-items {
+            .progress-wrap {
+                .pro-items {
+                    &:not(:last-child) {
+                        margin-bottom: 30px;
+                    }
+
+                    .pro-head {
+                        @include flex;
+                        justify-content: space-between;
+                        margin-bottom: 10px;
+
+                        .title {
+                            font-weight: 500;
+                            font-size: 18px;
+                            color: $header-color;
+                            font-family: $heading-font;
+                        }
+                                    
+                        .point {
+                            font-weight: 500;
+                            font-size: 18px;
+                            color: $header-color;
+                            font-family: $heading-font;
+                        }
+                    }
+                    .ber-box {
+                        .progress {
+                            background: #fff;
+                            justify-content: flex-start;
+                            align-items: center;
+                            position: relative;
+                            display: flex;
+                            height: 10px;
+                            width: 100%;
+                            border-radius: 100px;
+                        
+                            .progress-value {
+                                animation: load 4s normal forwards;
+                                background: $theme-color;
+                                height: 4px;
+                                width: 0;
+                                margin-left: 3px;
+                                position: relative;
+
+                                &::after {
+                                    content: "";
+                                    position: absolute;
+                                    right: -6px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    width: 8px;
+                                    height: 8px;
+                                    background: $theme-color;
+                                    border-radius: 50%;
+                                }
+
+                                &.value-2 {
+                                    animation: load2 5s normal forwards;
+                                }
+
+                                &.value-3 {
+                                    animation: load3 3s normal forwards;
+                                }
+                            }
+                        }
+                    }  
+                }
+            }
+
+            .choose-list {
+                @include flex;
+                margin-top: 35px;
+                justify-content: space-between;
+                gap: 26px;
+
+                @include breakpoint (max-xxl){
+                    flex-wrap: wrap;
+                    gap: 15px;       
+                }
+
+                @include breakpoint (max-lg){
+                    gap: 26px;;       
+                }
+
+                ul {
+                    li {
+                        display: flex;
+                        align-items: center;
+                        color: $text-color;
+                        font-weight: 500;
+                        font-size: 18px;
+                        font-family: $heading-font;
+
+                        img {
+                            margin-right: 13px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.choose-us-wrapper-2 {
+    .choose-us-content {
+        .choose-text {
+            margin-top: 20px;
+            max-width: 680px;
+            text-transform: capitalize;
+        }
+
+        .icon-items-area {
+            @include flex;
+            gap: 70px;
+            margin-top: 35px;
+            border-bottom: 1px solid $border-color;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+
+            @include breakpoint (max-md){
+                gap: 30px;
+            }
+
+            @include breakpoint (max-sm){
+                flex-wrap: wrap;
+            }
+
+            .icon-items {
+                @include flex;
+                gap: 20px;
+
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    line-height: 60px;
+                    border-radius: 6px;
+                    background-color: $header-color;
+                    text-align: center;
+                    @include transition;
+
+                    @include breakpoint (max-md){
+                        max-width: 60px;
+                        width: 100%;
+                    }
+
+                    svg path {
+                        @include transition;
+                    }
+                }
+
+                &:hover {
+                    .icon {
+                        background-color: $theme-color;
+
+                        svg {
+                            animation: wobble 1.5s ease-in-out;
+                        }
+
+                        svg path {
+                            fill: $header-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .choose-counter-items {
+            padding: 32px 30px;
+            background-color: $white;
+            border-radius: 20px;
+
+            @include breakpoint (max-md){
+                padding: 27px 17px;
+            }
+
+            @include breakpoint (max-md){
+                padding: 30px 25px;
+            }
+
+            .tittle{
+                position: relative;
+                font-size: 18px;
+                font-weight: 500;
+                padding-left: 15px;
+                color: $header-color;
+                margin-bottom: 55px;
+                display: inline-block;
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    width: 8px;
+                    height: 8px;
+                    background: $theme-color;
+                    border-radius: 50%;
+                    transform: translateY(-50%);
+                }
+            }
+
+            .counter-box {
+                h3 {
+                    font-size: 36px;
+                } 
+
+                h4 {
+                    font-size: 20px;
+                    margin-bottom: 12px;
+                    margin-top: 3px;
+
+                    @include breakpoint (max-xl){
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    text-transform: capitalize;
+                    color: $header-color;
+
+                    @include breakpoint (max-md){
+                        font-size: 14px;
+                    }
+                }
+            }
+
+            &.style-2 {
+                background-color: $header-color;
+
+                .tittle {
+                    color: $white;
+                }
+
+                .counter-box {
+                    h3 {
+                       color: $white;;
+                    } 
+
+                    h4 {
+                        color: $white;
+                    }
+
+                    p {
+                        color: $white;
+                    }
+                }
+            }
+        }
+    }
+
+    .choose-image-wrap {
+        position: relative;
+
+        .choose-img {
+            img {
+                border-radius: 20px;
+
+                @include breakpoint (max-xxxl){
+                    @include imgw;
+                }
+            }
+
+            &.style-img {
+                margin-left: 24px;
+
+                @include breakpoint (max-xxxl){
+                    margin-left: 0;
+                }
+            }
+        }
+
+        .choose-circle-btn {
+            position: absolute;
+            top: 56%;
+            left: 54%;
+            transform: translate(-50%, -50%);
+
+            @include breakpoint (max-xxxl){
+                left: 50%;
+            }
+            
+            a {
+                position: relative;
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                display: block;
+                background-color: $theme-color;
+                padding: 10px;
+
+                @include breakpoint (max-xl){
+                    width: 110px;
+                    height: 110px;
+                }
+
+                @include breakpoint (max-lg){
+                    width: 140px;
+                    height: 140px;
+                }
+
+                @include breakpoint (max-xxs){
+                    width: 110px;
+                    height: 110px;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    object-fit: contain;
+                    animation: cir36 12s linear infinite;
+                }
+
+                i {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 48px;
+                    height: 48px;
+                    transform: translate(-50%, -50%);
+                    border-radius: 50%;
+                    background-color: $header-color;
+                    color: $white;
+                    font-size: 14px;
+                    font-weight: 900;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .image-1 {
+            @include breakpoint (max-xl4){
+                height: 380px;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+
+        .image-3 {
+            @include breakpoint (max-xl4){
+                height: 303px;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

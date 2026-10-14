@@ -1,0 +1,622 @@
+
+.hero-1 {
+    position: relative;
+
+    .container-fluid {
+        padding: 0 180px;
+
+        @include breakpoint (max-xxxl){
+            padding: 0 40px;
+        }
+
+        @include breakpoint (max-xxl){
+            padding: 0 30px;
+        }
+
+        @include breakpoint (max-xl){
+            padding: 0 20px;
+        }
+    }
+
+     .swiper-slide.swiper-slide-active .hero-bg {
+        -webkit-transform: scale(1.35);
+        transform: scale(1.35);
+    }
+    
+    .swiper-slide.swiper-slide-active .hero-content {
+        opacity: 1;
+        transform: translatey(0px);
+        transition: all 2500ms ease;
+    }
+    .swiper-slide.swiper-slide-active .hero-button {
+        opacity: 1;
+        transform: translatey(0px);
+        transition: all 2500ms ease;
+    }
+
+
+    .hero-height {
+        padding: 320px 0 120px;
+        position: relative;
+
+        @include breakpoint (max-xl){
+            padding-top: 250px;
+        }
+
+        @include breakpoint (max-md){
+            padding: 240px 0 130px;
+        }
+    }
+
+     .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
+        transition: opacity 1500ms ease-in, -webkit-transform 7000ms ease;
+        transition: transform 9000ms ease, opacity 1500ms ease-in;
+        transition: transform 9000ms ease, opacity 1500ms ease-in, -webkit-transform 9000ms ease;
+
+        &::before {
+            @include before;
+            background: rgba(11, 34, 57, 0.5);
+        }
+    }
+
+    .hero-content {
+        opacity: 0;
+        z-index: 3;
+        position: relative;
+        transform: translateY(-150px);
+
+        @include breakpoint (max-xl){
+            max-width: 800px;
+        }
+
+        @include breakpoint (max-lg){
+            text-align: center;
+            margin: 0 auto;
+        }
+
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: $white;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            position: relative;
+            font-family: $heading-font;
+            display: inline-block;
+            padding-left: 28px;
+            padding-right: 14px;
+            border: 1px solid #D8DDE1;
+            border-radius: 100px;
+            height: 36px;
+            line-height: 36px;
+            
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 12px;
+                transform: translateY(-50%);
+                content: "";
+                background-color: $theme-color;
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        h1 {
+            color: $white;
+            font-size: 94px;
+            line-height: 111%;
+            text-transform: capitalize;
+
+            @include breakpoint (max-xxl){
+                font-size: 84px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 85px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 78px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 60px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 52px;
+            }
+
+             @include breakpoint (max-xxs){
+                font-size: 44px;
+            }
+        }
+
+        p {
+            color: $white;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 156%;
+            font-family: $heading-font;
+            max-width: 815px;
+            text-transform: capitalize;
+
+            @include breakpoint (max-lg){
+                font-size: 16px;
+            }
+        }
+    }
+
+    .hero-button {
+        margin-top: 190px;
+        transform: translateY(150px);
+        opacity: 0;
+        position: relative;
+        z-index: 9;
+
+        @include breakpoint (max-xl){
+            margin-top: 100px;
+        }
+
+        @include breakpoint (max-lg){
+            margin-top: 50px;
+        }
+
+
+        @include breakpoint (max-lg){
+            text-align: center;
+        }
+
+        .theme-btn {
+            &::before {
+                background-color: $white;
+            }
+
+            &:hover {
+                color: $header-color;
+            }
+        }
+    }
+
+    .social-icon-area {
+        position: absolute;
+        top: 40%;
+        transform: translateY(-50%);
+        right: 60px;
+        display: grid;
+        z-index: 3;
+        gap: 20px;
+
+        .line-1 {
+            display: inline-block;
+            width: 1px;
+            height: 52px;
+            background: #D8DDE1;
+            text-align: center;
+            position: relative;
+            right: -16px;
+        }
+
+        @include breakpoint (max-xl){
+            display: none;
+        }
+
+        span {
+            color: $white;
+            font-weight: 500;
+            display: inline-block;
+            position: relative;
+            writing-mode: sideways-lr;
+        }
+
+        .social-icon {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 8px;
+                }
+
+                a {
+                    color: $white;
+                    @include transition;
+                    display: inline-block;
+                    width: 36px;
+                    height: 36px;
+                    line-height: 36px;
+                    text-align: center;
+                    border-radius: 50%;
+                    text-align: center;
+                    background-color: $white;
+                    color: $header-color;
+
+                    &:hover {
+                        background-color: $theme-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .swiper-dot {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(5px);
+        border-radius: 100px;
+        right: 60px;
+        bottom: 120px;
+        z-index: 99;
+        height: 30px;
+        line-height: 25px;
+        padding: 0 10px;
+
+        @include breakpoint (max-lg){
+            right: 20px;
+            bottom: 20px;
+        }
+                
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            transition: 0.6s;
+            background-color: #FFFFFF;
+            opacity: 1;
+            border-radius: 8px;
+            &:not(:last-child){
+            margin-right: 10px;
+            }
+        }
+        .swiper-pagination-bullet.swiper-pagination-bullet-active {
+            background-color: $theme-color;
+            transition: 0.6s;
+            position: relative;
+            width: 24px;
+        }
+
+    }
+}
+
+.hero-2 {
+    border-radius: 30px;
+    margin: 0 20px;
+    position: relative;
+    margin-top: 20px;
+
+    @include breakpoint (max-xl){
+      padding: 0 30px;
+      padding-top: 150px;
+    }
+
+    .hero-dot {
+        position: absolute;
+        left: 88px;
+        top: 150px;
+    }
+
+    .social-icon {
+        position: absolute;
+        top: 50%;
+        left: 40px;
+        transform: translateY(-50%);
+        gap: 10px;
+
+        @include breakpoint (max-xxxl){
+            left: 15px;
+        }
+
+         @include breakpoint (max-xxl){
+            display: none !important;
+        }
+
+        .line {
+            width: 1px;
+            height: 87px;
+            background: $header-color;
+            transform: rotate(0deg);
+            margin-left: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        span {
+            color: #515459;
+            font-size: 16px;
+            font-weight: 500;
+            letter-spacing: 0.32px;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: 600;
+            font-family: $heading-font;
+            writing-mode: sideways-lr;
+        }
+
+        a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            border-radius: 50%;
+            background-color: $white;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $header-color;
+            }
+        }
+    }
+
+     .hero-content {
+        margin-left: 180px;
+        position: relative;
+
+        @include breakpoint (max-xxxl){
+            margin-left: 110px;
+        }
+
+        @include breakpoint (max-xxl){
+            max-width: 800px;
+            margin-left: 50px;
+        }
+
+        @include breakpoint (max-xl){
+            text-align: center;
+            margin: 0 auto;
+        }
+
+
+        .sub-title {
+            font-size: 14px;
+            font-weight: 500;
+            color: $header-color;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            position: relative;
+            font-family: $heading-font;
+            display: inline-block;
+            padding-left: 28px;
+            padding-right: 14px;
+            border: 1px solid #D8DDE1;
+            border-radius: 100px;
+            height: 36px;
+            line-height: 36px;
+            
+            &::before {
+                position: absolute;
+                top: 50%;
+                left: 12px;
+                transform: translateY(-50%);
+                content: "";
+                background-color: $theme-color;
+                width: 6px;
+                height: 6px;
+            }
+        }
+
+        h1 {
+            font-size: 74px;
+            line-height: 114%;
+            text-transform: capitalize;
+
+            @include breakpoint (max-xxxl){
+                font-size: 65px;
+            }
+
+            @include breakpoint (max-xxl){
+                font-size: 55px;
+            }
+
+            @include breakpoint (max-xl){
+                font-size: 70px;
+            }
+
+            @include breakpoint (max-lg){
+                font-size: 60px;
+            }
+
+            @include breakpoint (max-md){
+                font-size: 50px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 40px;
+            }
+
+             @include breakpoint (max-xxs){
+                font-size: 32px;
+            }
+        }
+
+        p {
+            color: #515459;
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 156%;
+            font-family: $heading-font;
+            max-width: 730px;
+            text-transform: capitalize;
+
+            @include breakpoint (max-xl){
+                font-size: 16px;
+                margin: 20px auto 0;
+            }
+
+            @include breakpoint (max-xxs){
+                font-size: 14px;
+            }
+        }
+
+        .hero-button {
+            @include flex;
+            gap: 40px;
+            margin-top: 40px;
+
+
+            @include breakpoint (max-xl){
+                flex-wrap: wrap;
+                gap: 20px;
+                margin-top: 25px;
+                justify-content: center;
+            }
+
+            .theme-btn {
+                &.header-bg {
+                    background-color: $header-color;
+                    color: $white;
+
+                    &::before {
+                        background-color: $theme-color;
+                    }
+
+                    &:hover {
+                        color: $header-color;
+                    }
+                }
+            }
+        }
+
+        .custom-pagination-wrap {
+            margin-top: 170px;
+            @include flex;
+            gap: 10px;
+
+            @include breakpoint (max-xxxl){
+                margin-top: 50px;
+            }
+
+            @include breakpoint (max-xl){
+               margin-bottom: 40px;
+               justify-content: center;
+               margin-top: 50px;
+            }
+
+            .pagi-lists {
+                @include flex;
+                gap: 12px;
+            }
+        
+            .prev {
+                color: $header-color;
+                font-size: 18px;
+                font-weight: 400;
+                @include transition;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+
+            .next {
+                color: $header-color;
+                font-size: 18px;
+                font-weight: 400;
+                @include transition;
+
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+            
+            .custom-pagination {
+                position: relative;
+                width: 80px;
+                margin: 0 auto;
+                height: 2px;
+                overflow: hidden;
+                background: $header-color;
+                    
+                .swiper-pagination-progressbar-fill {
+                    background: $theme-color;
+                }
+            }
+
+            .array-button {
+                z-index: 3;
+                gap: 0;
+
+                .array-prev {
+                    color: $header-color;
+                    background-color: transparent;
+
+                    &:hover {
+                        color: $theme-color;
+                        border: none;
+                    }
+                }
+
+                .array-next {
+                    color: $header-color;
+                    margin-left: -25px;
+                    background-color: transparent;
+
+                    &:hover {
+                        color: $theme-color;
+                        border: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero-image {
+        height: 1000px;
+        border-radius: 30px;
+        position: relative;
+
+        @include breakpoint (max-xxl){
+           height: 800px;
+        }
+
+        @include breakpoint (max-xl){
+           height: 600px;
+        }
+
+        @include breakpoint (max-md){
+           height: 500px;
+        }
+
+        .hero-info {
+            background-color: $white;
+            border-radius: 20px;
+            background-color: $white;
+            padding: 20px;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+
+            img {
+                width: initial;
+                height: initial;
+            }
+            
+            p {
+                font-weight: 500;
+                color: $header-color;
+                line-height: 162%;
+                font-size: 16px;
+                font-family: $heading-font;
+                margin-top: 15px;
+            }
+        }
+
+        img {
+            @include imgw;
+            object-fit: cover;
+            border-radius: 30px;
+        }
+    }
+}

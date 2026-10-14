@@ -1,0 +1,341 @@
+.team-card-item {
+    position: relative;
+    margin-top: 30px;
+
+    .team-image {
+        position: relative;
+        overflow: hidden;
+        z-index: 9;
+        border-radius: 20px;
+        border: 1px solid $border-color;
+
+        img {
+            @include imgw;
+            position: relative;
+            display: block;
+            object-fit: cover;
+            -webkit-transition: all 500ms ease;
+            transition: all 500ms ease;
+
+            &:first-child {
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                -index: 1;
+                -webkit-transform: translateX(50%) scaleX(2);
+                transform: translate(50%) scaleX(2);
+                opacity: 0;
+                -webkit-filter: blur(10px);
+                filter: blur(10px);
+            }
+        }
+  
+        .social-profile {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            content: "";
+            @include transition;
+            display: inline-block;
+            overflow: hidden;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-60px);
+            
+
+            ul {
+                text-align: center;
+
+                li {
+                    
+                    &:not(:last-child) {
+                        margin-bottom: 8px;
+                    }
+
+                    a {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $header-color;
+                        @include transition;
+                        display: inline-block;
+                        width: 36px;
+                        height: 36px;
+                        line-height: 36px;
+                        text-align: center;
+                        border-radius: 50%;
+                        border: 1px solid $border-color;
+
+                        &:hover {
+                            background-color: $theme-color;
+                            color: $header-color;
+                            border-color: $theme-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .team-content {
+        text-align: center;    
+        margin-top: 15px;
+
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+
+    &:hover {
+        .team-image {
+            img {
+                &:first-child {
+                    -webkit-transform: translateX(0) scaleX(1);
+                    transform: translate(0) scaleX(1);
+                    opacity: 1;
+                    -webkit-filter: blur(0);
+                    filter: blur(0);
+                }
+
+                &:nth-child(2) {
+                    -webkit-transform: translateX(-50%) scaleX(2);
+                    transform: translateX(-50%) scaleX(2);
+                    opacity: 0;
+                    -webkit-filter: blur(10px);
+                    filter: blur(10px);
+                }
+            }
+        }
+
+        .social-profile {
+            transform: translateY(0);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.team-details-wrapper {
+    .team-details-left {
+        border: 1px solid $theme-color;
+        background-color: #F8F8F8;
+        border-radius: 30px;
+
+        .team-details-image {
+            padding: 20px 20px 0;
+             border-radius: 20px;
+            img {
+                @include imgw;
+                border-radius: 20px;
+            }
+        }
+
+        .team-info-content {
+            padding: 30px 40px 40px;
+
+            .client-name {
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 25px;
+
+                h2 {
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 133%;
+                }
+            }
+
+            .info-item {
+                &:not(:last-child) {
+                    border-bottom: 1px solid $border-color;
+                    padding: 15px 0;
+                }
+
+                h3 {
+                    font-size: 16px;
+                    font-weight: 500;
+                    line-height: 142%;
+                }
+
+                p {
+                    a {
+                        color: $text-color;
+                    }
+                }
+
+                .social-icon{
+                    gap: 10px;
+                    @include flex; 
+                    margin-top: 12px;  
+
+                    li{
+                        a {
+                            width: 36px;
+                            height: 36px;
+                            line-height: 36px;
+                            text-align: center;
+                            font-size: 14px;
+                            display: block;
+                            color: $header-color;
+                            border: 1px solid $border-color;
+                            border-radius: 50%;
+                            @include transition;
+
+                            &:hover {
+                                background-color: $theme-color;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .team-details-content {
+        .issue-list-item {
+            margin-top: 30px;
+
+            li {
+                position: relative;
+                @include flex;
+                color: $header-color;
+                z-index: 22;
+                font-weight: 500;
+
+                @include breakpoint (max-xl){
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 12px;
+                }
+
+                i {
+                    margin-right: 10px;
+                    color: $white;
+                    height: 15px;
+                    width: 15px;
+                    font-size: 9px;
+                    line-height: 15px;
+                    text-align: center;
+                    background-color: $theme-color;
+                    border-radius: 50%;
+                }
+            }
+        }
+        .progress-wrap {
+            margin-top: 20px;
+
+            .pro-items {
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+
+                .pro-head {
+                    @include flex;
+                    justify-content: space-between;
+                    margin-bottom: 5px;
+
+                    .title {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: $header-color;
+                    }
+                                        
+                    .point {
+                        font-weight: 500;
+                        font-size: 18px;
+                        color: $header-color;
+                    }
+                }
+                .ber-box {
+                    .progress {
+                        border: 1px solid $theme-color;
+                        background-color: $white;
+                        justify-content: flex-start;
+                        align-items: center;
+                        position: relative;
+                        display: flex;
+                        height: 10px;
+                        width: 100%;
+                        border-radius: initial;
+                            
+                        .progress-value {
+                            animation: load 4s normal forwards;
+                            background: $theme-color;
+                            height: 4px;
+                            width: 0;
+                            margin-left: 3px;
+                            position: relative;
+
+                            &.value-2 {
+                                animation: load2 4s normal forwards;
+                            }
+
+                            &.value-3 {
+                                animation: load3 4s normal forwards;
+                            }
+                        }
+                    }
+                }  
+            }
+        }
+        
+        .contact-from {
+            margin-top: 30px;
+
+            h5 {
+                font-size: 30px;
+                font-weight: 700;
+            }
+
+            .inptFld {
+                width: 100%;
+                height: 56px;
+                border: 0;
+                color: $text-color;
+                font-size: 16px;
+                margin-bottom: 30px;
+                background-color: $white;
+                border: 1px solid $border-color;
+                padding-left: 30px;
+                border-radius: 30px;
+
+                 &::placeholder {
+                    color: $text-color;
+                    opacity: 0.7; 
+                }
+            }
+            .contFrm textarea {
+                height: 150px;
+                padding-top: 20px;
+            }
+
+            textarea:focus {
+                outline: none;
+            }
+            .contact-text {
+                color: $white;
+                margin-top: 20px;
+                opacity: 0.7;
+                font-weight: 500;
+                font-family: $heading-font;
+            }
+
+            .contact-button {
+                margin-top: 30px;
+
+                .theme-btn {
+                    width: 100%;
+                }
+            }  
+        }
+    }
+}
+
+
+            

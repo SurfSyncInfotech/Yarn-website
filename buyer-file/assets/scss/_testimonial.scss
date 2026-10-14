@@ -1,0 +1,285 @@
+.testi-client-info {
+    margin-top: 30px;
+
+    .title {
+        font-size: 18px;
+        font-weight: 500;
+        color: $white;
+        margin-top: 10px;
+    }
+
+    .title-2 {
+        font-size: 13px;
+        font-weight: 400;
+        color: $white;
+        margin-top: 120px;
+        max-width: 315px;
+        line-height: 171%;
+
+         @include breakpoint (max-lg){
+           margin-top: 40px;
+           font-size: 14px;
+        }
+    }
+}
+
+.testi-image {
+    margin-top: 30px;
+    max-width: 251px;
+
+    img {
+        @include imgw;
+        border-radius: 30px;
+    }
+}
+
+.testi-content {
+    margin-top: 30px;
+    position: relative;
+
+    .testi-content-items {
+        .title-3 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 142%;
+            color: $white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+            line-height: 171%;
+            padding-bottom: 34px;
+            text-transform: capitalize;
+
+             @include breakpoint (max-lg){
+                font-size: 21px;
+            }
+
+             @include breakpoint (max-md){
+                font-size: 20px;
+            }
+
+            @include breakpoint (max-sm){
+                font-size: 19px;
+            }
+
+            @include breakpoint (max-xxs){
+                font-size: 17px;
+            }
+        }
+
+        .client-info {
+            @include flex;
+            gap: 15px;
+            margin-top: 34px;
+
+             @include breakpoint (md){
+               margin-top: 25px;
+            }
+
+            .content {
+                .title-4 {
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: $white;
+
+                     @include breakpoint (max-sm){
+                        font-size: 18px;
+                    }
+                }
+
+                p {
+                    font-size: 14px;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .array-button {
+        @include flex;
+        gap: 15px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 99;
+
+        @include breakpoint (max-xxs){
+            position: static;
+            margin-top: 30px;
+        }
+
+         .array-prev,.array-next {
+            width: 48px;
+            height: 48px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 50%;
+            border: 1px solid #D8DDE1;
+            text-align: center;
+            @include transition;
+            background-color: transparent;
+            color: $white;
+
+            &:hover {
+                background-color: $theme-color;
+                color: $header-color;
+                border-color: $theme-color;
+            }
+        }
+    }
+}
+
+
+.testimonial-section-2 {
+    .container-fluid {
+        padding: 0 95px;
+
+         @include breakpoint (max-xl4){
+            padding: 0 65px;
+        }
+
+         @include breakpoint (max-xxl){
+            padding: 0 50px;
+        }
+
+         @include breakpoint (max-xxl){
+            padding: 0 35px;
+        }
+
+        @include breakpoint (max-xl){
+            padding: 0 25px;
+        }
+
+         @include breakpoint (max-xxs){
+            padding: 0 15px;
+        }
+    }
+}
+
+.testimonial-wrapper-2 {
+    .testimonial-card-items {
+        margin-top: 30px;
+        position: relative;
+        
+        .testimonial-items-top {
+            background-color: $white;
+            border-radius: 30px;
+            padding: 60px 40px;
+            position: relative;
+            margin-bottom: 30px;
+
+            @include breakpoint (max-sm){
+                padding: 30px 40px;
+            }
+
+            .icom-items {
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid $border-color;
+                padding-bottom: 25px;
+                margin-bottom: 25px;
+
+                .rating-box {
+
+                    .star {
+                        color: #E75415;
+                        margin-bottom: 7px;
+                        position: relative;
+                        z-index: 9;
+                    }
+
+                    h3 {
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 163%;
+                text-transform: capitalize;
+                position: relative;
+                z-index: 9;
+
+                @include breakpoint (max-sm){
+                    font-size: 16px;
+                }
+            }
+        
+            &::before {
+                position: absolute;
+                content: "";
+                left: 34px;
+                bottom: -24px;
+                width: 30px;
+                height: 25px;
+                background-color: inherit;
+                -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+                clip-path: polygon(100% 0, 0 0, 53% 100%);
+            }
+        }
+
+        .info-item {
+            @include flex;
+            gap: 15px;
+            margin-top: 40px;
+            margin-left: 25px;
+
+            @include breakpoint (max-xxl) {
+                margin-top: 30px;
+            }
+
+            img {
+                border-radius: 100px;
+            }
+
+            .content {
+                h4 {
+                    font-size: 20px;
+                }
+
+                span {
+                    color: $header-color;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .content-bottom {
+        text-align: center;
+        margin-top: 50px;
+
+        p {
+            font-size: 14px;
+
+            a {
+                font-weight: 500;
+                border-bottom: 1px solid $header-color;
+
+                &:hover {
+                    color: $theme-color;
+                    border-bottom: 1px solid $theme-color;
+                }
+            }
+        }
+
+        .ratting-area {
+            @include flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: 15px;
+
+            span {
+                font-weight: 500;
+                color: $header-color;
+            }
+
+            .star {
+                color: #E75415;
+                position: relative;
+                z-index: 9;
+            }
+        }
+    }
+}

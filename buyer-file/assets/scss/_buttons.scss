@@ -1,0 +1,72 @@
+.theme-btn {
+    font-size: 14px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 58px;
+    line-height: 58px;
+    background-color: $theme-color;
+    overflow: hidden;
+    display: inline-block;
+    padding: 0 40px;
+    color: $header-color;
+    border-radius: 100px;
+    font-family: 'Hanken Grotesk', sans-serif;
+
+
+    @include breakpoint (max-sm){
+      font-size: 14px;
+      padding: 0 25px;
+      height: 52px;
+      line-height: 52px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        top: -10px;
+        height: 0;
+        background-color: $header-color;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.8s ease;
+        z-index: -1;
+    }
+
+    i {
+      margin-left: 5px;
+    }
+
+    &:hover {
+        color: $white;
+
+        &::before {
+          width: 800px;
+          height: 800px;
+          display: inline-block;
+        }
+    }
+}
+
+
+/*==== link btn  ====*/
+.link-btn {
+    color: $white;
+    display: inline-block;
+    transition: all 0.4s ease-in-out;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: "Hanken Grotesk", sans-serif;
+
+    i {
+        margin-left: 8px;
+    }
+
+    &:hover {
+        color: $theme-color;
+    }
+}

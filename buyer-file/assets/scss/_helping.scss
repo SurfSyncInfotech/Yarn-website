@@ -1,0 +1,223 @@
+
+//page scroll bar add
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px $bg-color; 
+	border-radius: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: $theme-color;
+	border-radius: 10px;
+}
+//page scroll bar add
+
+//Basic Code Start
+.fix {
+  overflow: hidden;
+}
+
+.ralt{
+ position: relative;
+}
+
+//Basic Code End
+
+//Video Css Start
+.ripple {
+  position: relative;
+
+  &::before,&::after {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      -webkit-transform: translateX(-50%) translateY(-50%);
+      transform: translateX(-50%) translateY(-50%);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(21, 57, 238, .6);
+      -webkit-animation: rippleOne 3s infinite;
+      animation: rippleOne 3s infinite;
+  }
+
+  &::before {
+      -webkit-animation-delay: 0.9s;
+      animation-delay: 0.9s;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+
+  &::after {
+      -webkit-animation-delay: 0.6s;
+      animation-delay: 0.6s;
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: 0;
+  }
+}
+//Video Css End
+
+
+//pagination default
+
+//pagination default
+
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.slide-transtion {
+	-webkit-transition-timing-function: linear;
+	transition-timing-function: linear;
+}
+.brand-slide-element {
+	width: auto;
+	display: inline-block;
+}
+
+.container-2 {
+  max-width: 1320px;
+}
+
+.hero-container {
+  max-width: 1682px;
+  margin: 0 auto;
+}
+
+br {
+  @include breakpoint (max-lg){
+    display: none;
+  }
+}
+
+ .underline {
+    background-position: 0 95%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    display: inline;
+                
+    &:hover {
+      color: $header-color;
+      background-size: 100% 2px;
+      background-image: linear-gradient(180deg, $header-color 0%, $header-color 100%);
+    }
+  }
+
+
+.text_invert > div {
+  background-image: linear-gradient(to right, rgb(137, 137, 137) 50%, rgb(137, 137, 137) 50%);
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.text_invert-2 > div {
+  background-image: linear-gradient(to right, rgb(25, 42, 25) 50%, rgb(137, 137, 137) 50%);
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.mt-15 {
+  margin-top: 15px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.page-nav-wrap {
+  margin-top: 60px;
+
+  ul {
+      li {
+          display: inline-block;
+
+          .page-numbers {
+              display: inline-block;
+              width: 50px;
+              height: 50px;
+              text-align: center;
+              line-height: 50px;
+              border: 1px solid $border-color;
+              background: transparent;
+              color: $header-color;
+              font-weight: 500;
+              font-size: 16px;
+              transition: all 0.3s ease-in-out;
+              margin: 0 5px;
+              border-radius: 50%;
+
+             &.active {
+               background-color: $theme-color;
+               color: $header-color;
+             }
+
+              &:hover {
+                  background-color: $theme-color;
+                  color: $header-color;
+              }
+          }
+
+          i {
+              color: $header-color;
+          }
+       }
+   }
+}
+
+
+.array-button {
+    @include flex;
+    gap: 12px;
+
+    .array-prev {
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      background-color: $theme-color;
+      color: $white;
+      @include transition;
+
+      &:hover {
+        background-color: transparent;
+        border: 1px solid $border-color;
+        color: $theme-color;
+      }
+  }
+
+  .array-next {
+      width: 56px;
+      height: 56px;
+      line-height: 56px;
+      text-align: center;
+      background-color: $theme-color;
+      color: $white;
+      @include transition;
+
+      &:hover {
+          background-color: transparent;
+          border: 1px solid $border-color;
+          color: $theme-color;
+      }
+  }
+}
+
+

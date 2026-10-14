@@ -1,0 +1,72 @@
+.pricing-box-items {
+    margin-top: 30px;
+    padding: 40px 30px;
+    background-color: $white;
+    border-radius: 30px;
+
+    @include breakpoint (max-xxl){
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    p {
+        font-family: $heading-font;
+        margin-top: 5px;
+    }
+
+    .pricing-thumb {
+        margin-top: 20px;
+
+        img {
+            @include imgw;
+            border-radius: 20px;
+        }
+    }
+
+    .title-2 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-top: 30px;
+
+        sub {
+            font-size: 14px;
+            font-weight: 400;
+            color: #515459;
+            margin-left: -10px;
+        }
+    }
+
+    .theme-btn {
+        width: 100%;
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .title-3 {
+        font-size: 20px;
+        font-weight: 600;
+        margin-top: 15px;
+    }
+
+    .pricing-list {
+        margin-top: 20px;
+        
+        li {
+            @include flex;
+            gap: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #0B2239;
+            font-family: $heading-font;
+
+             &:not(:last-child) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+    
