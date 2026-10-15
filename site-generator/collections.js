@@ -1,0 +1,7 @@
+page({ file: 'collections.html', a: 'fabric', title: 'Fabrics & Yarns', desc: 'Browse all Rajvastra yarns and fabrics: cotton, silk, wool, zari, Banarasi, handloom, block print and linen.', body: `${crumb('Fabrics & Yarns', 'rolls1')}
+<section class="section-padding fix"><div class="container"><div class="text-center mx-auto" style="max-width:820px"><span class="sub-title">The Collection</span><h2 class="char-animation">Eight Materials. Endless Possibilities.</h2><p class="mt-3">From long-staple cotton yarn to heirloom Banarasi brocade, every material is sourced at its origin, finished with care and tested before it reaches you. Filter by category, open any material for specifications, shades and applications, or request a sample in one click.</p></div>
+<div class="filter-bar mt-5"><button class="filter-btn active" data-filter="all">All Materials</button><button class="filter-btn" data-filter="Fabric">Fabrics</button><button class="filter-btn" data-filter="Yarn">Yarns</button></div><div class="row g-4 mt-1" id="rv-grid">${P.map(rvCard).join('')}</div></div></section>
+${featureGrid('Why Rajvastra', 'What Every Material Comes With', PROMISE.slice(0, 3), 'section-bg')}
+${steps('How to Order', 'From Brief to Delivery in Four Steps', ORDER, '')}
+${faqSection('cf', FAQ)}
+${ctaBand('Need something bespoke?', 'We develop custom counts, weaves, shades and prints to your brief.', 'Custom Order')}` });

@@ -1,0 +1,2 @@
+${featureGrid('Ways to Reach Us', 'We’re Always Within Reach', [['fa-whatsapp fa-brands', 'WhatsApp', 'Chat with an advisor and share photos and swatches instantly on ' + B.phone + '.'], ['fa-envelope', 'Email', 'Send specifications to ' + B.email + ' and hear back within one working day.'], ['fa-location-dot', 'Visit the Studio', 'See and feel the collection at our Surat studio, by appointment. ' + B.hours + '.']], 'section-bg')}
+${faqSection('cof', FAQ.slice(0, 4))}
